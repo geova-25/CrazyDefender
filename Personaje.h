@@ -24,12 +24,15 @@ public:
     void dibujar();
 
     void liberar();
+    int getPosicion_x();
+    int getPosicion_y();
+    void setPosicion_x(int x);
+    void setPosicion_y(int y);
 
 private:
 
 	int resistencia;
-	SDL_Surface* imagen = NULL;
-	SDL_Rect* posicion_fondo = NULL;
-
+	int posicion_x;
+	int posicion_y;
 
 };
