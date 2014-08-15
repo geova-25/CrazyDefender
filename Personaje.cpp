@@ -20,11 +20,13 @@ Personaje::Personaje(){
 
 	void Personaje::liberarDeMemoria(){}
 
-    void Personaje::setResistencia(int resistencia){}
+    void Personaje::setPtrResistencia(int* resis){
+    	PtrResistencia = resis ;
+    }
 
-    int Personaje::getResistencia(){
+    int* Personaje::getPtrResistencia(){
 
-    	return resistencia;
+    	return PtrResistencia;
     }
     void Personaje::imprimir(){
         	cout<<"se creo nuevo personaje"<< endl;
@@ -37,17 +39,17 @@ Personaje::Personaje(){
     void Personaje::liberar(){
 
     }
-    int Personaje::getPosicion_x(){
-    	return posicion_x;
+    int* Personaje::getPtrPosicion_x(){
+    	return PtrPosicion_x;
     }
-    int Personaje::getPosicion_y(){
-    	return posicion_y;
+    int* Personaje::getPtrPosicion_y(){
+    	return PtrPosicion_y;
     }
-    void Personaje::setPosicion_x(int x){
-    	posicion_x = x;
+    void Personaje::setPtrPosicion_x(int* x){
+    	PtrPosicion_x = x;
     }
-    void Personaje::setPosicion_y(int y){
-    	posicion_y = y;
+    void Personaje::setPtrPosicion_y(int* y){
+    	PtrPosicion_y = y;
     }
 
 

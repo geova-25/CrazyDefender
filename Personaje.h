@@ -15,24 +15,25 @@ public:
 
 	void liberarDeMemoria();
 
-    void setResistencia(int resistencia);
+    void setPtrResistencia(int* resistencia);
 
-    int getResistencia();
+    int* getPtrResistencia();
 
     void imprimir();
 
     void dibujar();
 
     void liberar();
-    int getPosicion_x();
-    int getPosicion_y();
-    void setPosicion_x(int x);
-    void setPosicion_y(int y);
+    int* getPtrPosicion_x();
+    int* getPtrPosicion_y();
+    void setPtrPosicion_x(int* x);
+    void setPtrPosicion_y(int* y);
 
 private:
 
-	int resistencia;
-	int posicion_x;
-	int posicion_y;
+	int* PtrResistencia;
+	int* PtrPosicion_x;
+	int* PtrPosicion_y;
+
 
 };
