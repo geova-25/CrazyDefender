@@ -19,7 +19,7 @@ public:
 
     int* getPtrResistencia();
 
-    void imprimir();
+    void imprimirPosicion();
 
     void dibujar();
 
@@ -29,8 +29,9 @@ public:
     void setPtrPosicion_x(int* x);
     void setPtrPosicion_y(int* y);
 
-private:
-
+protected:
+    int posicion_inicial_x = 0;
+    int posicion_inicial_y =0;
 	int* PtrResistencia;
 	int* PtrPosicion_x;
 	int* PtrPosicion_y;

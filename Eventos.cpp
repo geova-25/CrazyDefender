@@ -16,32 +16,43 @@ Eventos :: Eventos()
 {
 
 }
-
-
-void Eventos::detectarEventos()
-{
-	while (true){
-
+int Eventos::identificarTecla(){
 	while (SDL_PollEvent(&event)){
 
-		cout<<"paso2"<<endl;
-		if (event.type == SDL_KEYDOWN){
-			if (event.key.keysym.sym == SDLK_UP){
+			if (event.type == SDL_KEYDOWN){
+				if (event.key.keysym.sym == SDLK_UP){
 					cout<<"flecha arriba"<<endl;
+					return 1;
+
+				}
+			    if (event.key.keysym.sym == SDLK_DOWN){
+					cout<<"flecha abajo"<<endl;
+					return 2;
+				}
+			    if (event.key.keysym.sym == SDLK_RIGHT){
+			    	cout<<"flecha derecha"<<endl;
+			    	return 3;
+				}
+			    if (event.key.keysym.sym == SDLK_LEFT){
+	 				cout<<"flecha izquierda"<<endl;
+	 				return 4;
+			   }
+
+
 			}
-		    if (event.key.keysym.sym == SDLK_DOWN){
-				cout<<"flecha abajo"<<endl;
-			}
-		    if (event.key.keysym.sym == SDLK_RIGHT){
-		    	cout<<"flecha derecha"<<endl;
-			}
-		    if (event.key.keysym.sym == SDLK_LEFT){
- 				cout<<"flecha izquierda"<<endl;
-		   }
+
 		}
 
-	}
+	return 0;
 }
+
+
+int Eventos::detectarEventos()
+{
+	while (true){
+	identificarTecla();
+    }
+	return 0;
 
 }
 

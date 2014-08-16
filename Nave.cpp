@@ -7,6 +7,7 @@
 
 #include "Nave.h"
 
+
 Nave::Nave() {
 	// TODO Auto-generated constructor stub
 
@@ -14,5 +15,10 @@ Nave::Nave() {
 
 Nave::~Nave() {
 	// TODO Auto-generated destructor stub
+}
+
+void Nave::acelerar( ){
+	*PtrPosicion_x = *PtrPosicion_x + 2 ;
+
 }
 

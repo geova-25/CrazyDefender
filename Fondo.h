@@ -28,6 +28,7 @@ class Fondo
 public:
 	Fondo();
 	virtual ~Fondo();
+
 	int dibujarVentana();
     void rellenarFondoNegro();
 	void dibujarFondo();

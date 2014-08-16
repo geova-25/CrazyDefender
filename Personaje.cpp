@@ -8,6 +8,9 @@ using std::endl;
 #include <SDL/SDL.h>
 
 Personaje::Personaje(){
+	PtrPosicion_x = &posicion_inicial_x;
+	PtrPosicion_y = &posicion_inicial_y;
+
 
 }
     void Personaje::morir(){
@@ -28,8 +31,9 @@ Personaje::Personaje(){
 
     	return PtrResistencia;
     }
-    void Personaje::imprimir(){
-        	cout<<"se creo nuevo personaje"<< endl;
+    void Personaje::imprimirPosicion(){
+        	cout<<"posicion en X :"<<*PtrPosicion_x<< endl;
+        	cout<<"posicion en Y :"<<*PtrPosicion_y<< endl;
     }
 
     void Personaje::dibujar(){

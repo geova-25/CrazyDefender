@@ -7,27 +7,16 @@ using std::endl;
 #include <stdlib.h>
 #include <string>
 using std::string;
-#include "Personaje.h"
+
 #include "Fondo.h"
 #include "GUI.h"
 #include "SDL/SDL_thread.h"
 #include "Eventos.h"
 #include <pthread.h>
+#include "Logica.h"
+
+
 Fondo fondo1;
-Eventos evento;
-pthread_t hilo1;
-pthread_t hilo2;
-pthread_t hilo3;
-
-
-
-using namespace std;
-
-void *correrHiloEventos(void* unused){
-
-	evento.detectarEventos();
-	SDL_Delay(100);
-	}
 
 void initRender(){
 	fondo1.init();
@@ -37,6 +26,17 @@ void initRender(){
 
 }
 
+
+/*
+Eventos evento;
+pthread_t hilo1;
+pthread_t hilo2;
+pthread_t hilo3;
+using namespace std;
+void *correrHiloEventos(void* unused){
+	evento.detectarEventos();
+	SDL_Delay(100);
+	}
 void* render(void* unused){
 while(true){
 	fondo1.rellenarFondoNegro();
@@ -45,35 +45,30 @@ while(true){
         cout<<"render"<<endl;
         SDL_Delay(100);
 }
-
-
 }
 void* update(void* g){
 	int velocidad = 1;
 
 	while(true){
 		fondo1.mover(velocidad);
-
-
-
-
 		cout<<fondo1.getPosicionRectFondo_x()<<endl;
 		cout<<fondo1.getPosicionRect2Fondo_x()<<endl;
-
-
 		SDL_Delay(100);
 	}
-
-
-
 }
-
-
+*/
 
 
 int main(){
 
 	initRender();
+    Logica logica;
+    logica.run();
+    SDL_Delay(1000);
+
+
+
+	/*initRender();
 
 	void* g ;
 
@@ -84,11 +79,7 @@ int main(){
 
 	pthread_join(hilo1,NULL);
 	pthread_join(hilo2,NULL);
-	pthread_join(hilo3,NULL);
-
-
-    cout<<"s"<<endl;
-
+	pthread_join(hilo3,NULL);    */
 
 }
 

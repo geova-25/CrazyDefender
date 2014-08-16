@@ -23,7 +23,8 @@ class Eventos
 
 	public:
 		Eventos();
-	    void detectarEventos( );
+	    int detectarEventos( );
+	    int identificarTecla();
 
 		void eventoMouse();
 

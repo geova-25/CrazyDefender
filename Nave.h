@@ -14,6 +14,7 @@ class Nave : public Personaje
 public:
 	Nave();
 	virtual ~Nave();
+	void acelerar();
 };
 
 #endif /* NAVE_H_ */
