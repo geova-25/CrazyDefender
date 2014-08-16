@@ -11,34 +11,45 @@ using std::string;
 #include "Fondo.h"
 #include "GUI.h"
 #include "SDL/SDL_thread.h"
-
-
+#include "Eventos.h"
+#include <pthread.h>
 Fondo fondo1;
+Eventos evento;
+pthread_t hilo1;
+pthread_t hilo2;
+pthread_t hilo3;
+
 
 
 using namespace std;
-SDL_Thread *hilo = NULL;
-SDL_Thread *hilo2 = NULL;
+
+void *correrHiloEventos(void* unused){
+
+	evento.detectarEventos();
+	SDL_Delay(100);
+	}
 
 void initRender(){
 	fondo1.init();
 	fondo1.dibujarVentana();
 	fondo1.cargarImagenFondo();
 
+
 }
 
-int render(){
-
+void* render(void* unused){
+while(true){
 	fondo1.rellenarFondoNegro();
 	fondo1.dibujarFondo();
 	fondo1.actualizarFondo();
         cout<<"render"<<endl;
-
-
-    return 0;
+        SDL_Delay(100);
 }
-int update(void* g){
-	int velocidad = 100;
+
+
+}
+void* update(void* g){
+	int velocidad = 1;
 
 	while(true){
 		fondo1.mover(velocidad);
@@ -48,12 +59,12 @@ int update(void* g){
 
 		cout<<fondo1.getPosicionRectFondo_x()<<endl;
 		cout<<fondo1.getPosicionRect2Fondo_x()<<endl;
-		SDL_Delay(50);
 
 
+		SDL_Delay(100);
 	}
 
-	return 0;
+
 
 }
 
@@ -61,24 +72,23 @@ int update(void* g){
 
 
 int main(){
+
 	initRender();
 
-
-	//hilo = SDL_CreateThread(update, NULL);
-	//hilo2 = SDL_CreateThread(render, NULL);
-//Gameloop
+	void* g ;
 
 
+	pthread_create(&hilo1,NULL,correrHiloEventos,NULL);
+	pthread_create(&hilo2,NULL,update,NULL);
+	pthread_create(&hilo3,NULL,render,NULL);
 
-	while(true){
-
-           // update();
-            //render();
-			//SDL_Delay(100);
+	pthread_join(hilo1,NULL);
+	pthread_join(hilo2,NULL);
+	pthread_join(hilo3,NULL);
 
 
+    cout<<"s"<<endl;
 
-		}
-	return 0;
+
 }
 
