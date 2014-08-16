@@ -13,17 +13,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-const int ANCHO_DE_PANTALLA=1200;
-const int LARGO_DE_PANTALLA = 600;
-
-const int INICIAL_P1= 0;
-const int INICIAL_P2 = - (ANCHO_DE_PANTALLA * 2);
-
-
-
-
-class Fondo
-{
+class Fondo {
 
 public:
 	Fondo();
@@ -35,9 +25,7 @@ public:
 	void actualizarFondo();
 	void cargarImagenFondo();
 	void init();
-	void mover(int velocidad);
 	int getPosicionRectFondo_x();
-
 	int getPosicionRect2Fondo_x();
 
 
@@ -51,8 +39,14 @@ private:
 	SDL_Surface* screen = NULL;
 	SDL_Rect rect_fondo;
 	SDL_Rect rect_fondo2;
-	int p1 = INICIAL_P1;
-	int p2 = INICIAL_P2;
+
+
+	int ANCHO_DE_PANTALLA;
+	int LARGO_DE_PANTALLA ;
+    int INICIAL_P1;
+    int INICIAL_P2 ;
+    int p1 = INICIAL_P1;
+    int p2 = INICIAL_P2;
 
 };
 

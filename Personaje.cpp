@@ -36,9 +36,9 @@ Personaje::Personaje(){
         	cout<<"posicion en Y :"<<*PtrPosicion_y<< endl;
     }
 
-    void Personaje::dibujar(){
 
-    }
+
+
 
     void Personaje::liberar(){
 

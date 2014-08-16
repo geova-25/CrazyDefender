@@ -9,7 +9,6 @@
 using std::string;
 using std::cout;
 using std::endl;
-
 #include "Fondo.h"
 #include <SDL/SDL.h>
 
@@ -24,7 +23,12 @@ Fondo::Fondo() {
 	rect_fondo2.y = 0;
 	rect_fondo2.h = NULL;
 	rect_fondo2.w = NULL;
-
+ ANCHO_DE_PANTALLA=1200;
+		LARGO_DE_PANTALLA = 600;
+	    INICIAL_P1= 0;
+	    INICIAL_P2 = - (ANCHO_DE_PANTALLA * 2);
+	    p1 = INICIAL_P1;
+	    p2 = INICIAL_P2;
 
 }
 
@@ -94,26 +98,3 @@ void Fondo::init(){
   int Fondo::getPosicionRect2Fondo_x(){
   	 return rect_fondo2.x;
   }
-
-  void Fondo::mover(int velocidad){
-	  moverRect2Fondo_x(velocidad);
-	  moverRectFondo_x(velocidad);
-	  if (p1 >= ANCHO_DE_PANTALLA*2 ){
-		  p1 = INICIAL_P2  ;
-	  }
-	  if (p2 >= ANCHO_DE_PANTALLA*2){
-	  		  p2 = INICIAL_P2;
-	  	  }
-	 /* if (p1 <= INICIAL_P2 ){
-	  		  p1 = ANCHO_DE_PANTALLA*2   ;
-	  	  }
-	  if (p2 <= INICIAL_P2){
-	  		 p2 = ANCHO_DE_PANTALLA*2 ;
-	  	  }*/
-
-  }
-
-
-
-
-

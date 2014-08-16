@@ -1,3 +1,4 @@
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -7,32 +8,26 @@ using std::endl;
 
 #include <string>
 using std::string;
+#include "Fondo.h"
  /*
  *  Created on: 09/08/2014
  *      Author: sebastian
  */
 
-#ifndef GUI_H_
-#define GUI_H_
+
 
 class GUI {
 
 public:
 	GUI();
 	virtual ~GUI();
-	int dibujarVentana();
-	void rellenarFondoNegro();
-	void dibujarFondo();
-	void actualizarFondo();
-	void cargarImagenFondo();
-	void init();
+	void Render();
+	void initScreen();
 
 
 private:
-	SDL_Surface* imagen_fondo  = NULL ;
-    SDL_Surface* screen = NULL;
-    SDL_Rect posicion_fondo;
+	Fondo fondo;
 
 };
 
-#endif /* GUI_H_ */
+

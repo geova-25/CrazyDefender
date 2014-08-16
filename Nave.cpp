@@ -17,8 +17,9 @@ Nave::~Nave() {
 	// TODO Auto-generated destructor stub
 }
 
-void Nave::acelerar( ){
-	*PtrPosicion_x = *PtrPosicion_x + 2 ;
+void Nave::acelerar(int * velocidad_x ,int* velocidad_y ){
+	*PtrPosicion_x = *PtrPosicion_x + *velocidad_x ;
+	*PtrPosicion_y = *PtrPosicion_y + *velocidad_y ;
 
 }
 

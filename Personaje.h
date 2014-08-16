@@ -21,7 +21,7 @@ public:
 
     void imprimirPosicion();
 
-    void dibujar();
+
 
     void liberar();
     int* getPtrPosicion_x();

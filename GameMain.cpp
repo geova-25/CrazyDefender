@@ -7,27 +7,20 @@ using std::endl;
 #include <stdlib.h>
 #include <string>
 using std::string;
-
-#include "Fondo.h"
 #include "GUI.h"
 #include "SDL/SDL_thread.h"
 #include "Eventos.h"
 #include <pthread.h>
 #include "Logica.h"
 
-
+/*
 Fondo fondo1;
 
 void initRender(){
 	fondo1.init();
 	fondo1.dibujarVentana();
 	fondo1.cargarImagenFondo();
-
-
 }
-
-
-/*
 Eventos evento;
 pthread_t hilo1;
 pthread_t hilo2;
@@ -60,19 +53,23 @@ void* update(void* g){
 
 
 int main(){
-
-	initRender();
+	GUI gui;
     Logica logica;
+
+    gui.initScreen();
+    gui.Render();
+
     logica.run();
-    SDL_Delay(1000);
 
 
 
-	/*initRender();
 
+
+
+
+
+    /*initRender();
 	void* g ;
-
-
 	pthread_create(&hilo1,NULL,correrHiloEventos,NULL);
 	pthread_create(&hilo2,NULL,update,NULL);
 	pthread_create(&hilo3,NULL,render,NULL);
