@@ -16,6 +16,14 @@ Logica::~Logica() {
 }
 void Logica::run(){
 
+    void* Buffer = calloc(1,sizeof(Personaje));
+    PtrNave = (Personaje*)Buffer;
+    cout<<PtrNave<<endl;
+    cout<<Buffer<<endl;
+    *PtrNave = nave;
+    cout<<PtrNave<<endl;
+
+
 	int tecla=89;
 	int* PtrVelocidad_x;
 	int* PtrVelocidad_y;
@@ -25,7 +33,7 @@ void Logica::run(){
 	PtrVelocidad_y = &b;
 	while (true){
 		tecla = evento.identificarTecla();
-		SDL_Delay(300);                       //DElay/////////////////////
+		SDL_Delay(100);                       //DElay/////////////////////
 		//cout<<tecla<<endl;
 		if (tecla == 1){    //Tecla arriba
 			*PtrVelocidad_y = *PtrVelocidad_y - 1;
@@ -40,16 +48,15 @@ void Logica::run(){
 		if (tecla == 4){    //Tecla izquierda
 			*PtrVelocidad_x = *PtrVelocidad_x - 1;
 		}
+
 		nave.acelerar(PtrVelocidad_x,PtrVelocidad_y);
 		nave.imprimirPosicion();
-		Notificar(*nave.getPtrPosicion_x());
-
-
-
+		//cout<<*PtrNave->getPtrPosicion_x()<<endl;
+		Notificar(PtrNave);
 	 }
 
 }
-void Logica::Notificar(int personaje)
+void Logica::Notificar(Personaje* personaje)
 {
   Notify(personaje);
 }

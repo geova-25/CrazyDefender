@@ -11,13 +11,14 @@
 #include <SDL/SDL.h>
 #include <string>
 using std::string;
+#include "Personaje.h"
 
 class Image {
 public:
 	Image();
 	virtual ~Image();
 	void cargarImagen(const char*  nombre);
-	void Dibujar(SDL_Surface* screen , int xx, int yy);
+	void Dibujar(SDL_Surface* screen , Personaje* personaje);
 
 
 private:

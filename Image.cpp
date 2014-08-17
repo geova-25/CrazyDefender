@@ -9,6 +9,7 @@
 #include <string>
 using std::string;
 
+
 Image::Image() {
 
 
@@ -20,9 +21,11 @@ Image::~Image() {
 	// TODO Auto-generated destructor stub
 }
 
-void Image::Dibujar(SDL_Surface* screen , int xx, int yy){
-	rect.x = xx ;
-	rect.y = yy ;
+void Image::Dibujar(SDL_Surface* screen , Personaje* personaje){
+	int* xx = personaje->getPtrPosicion_x();
+	int* yy = personaje->getPtrPosicion_y();
+	rect.x = *xx;
+	rect.y = *yy ;
 	SDL_BlitSurface(imagen,NULL,screen, &rect);
 
 }

@@ -65,7 +65,7 @@ void *correrHiloRender(void* unused){
 int main(){
 
     logica.Attach(&gui);
-    gui.initScreen();
+     gui.initScreen();
 
     pthread_create(&hilo1,NULL,correrHiloRender,NULL);
 

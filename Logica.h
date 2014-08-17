@@ -32,11 +32,12 @@ public:
 	Logica();
 	virtual ~Logica();
 	void run();
-	void Notificar(int PtrPersonaje);
+	void Notificar(Personaje* PtrPersonaje);
 
 private:
 	Eventos evento;
-	Nave nave;
+	Personaje nave;
+	Personaje* PtrNave;
 
 };
 

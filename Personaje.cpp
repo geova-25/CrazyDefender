@@ -55,6 +55,12 @@ Personaje::Personaje(){
     void Personaje::setPtrPosicion_y(int* y){
     	PtrPosicion_y = y;
     }
+    void Personaje::acelerar(int * velocidad_x ,int* velocidad_y ){
+    	*PtrPosicion_x = *PtrPosicion_x + *velocidad_x ;
+    	*PtrPosicion_y = *PtrPosicion_y + *velocidad_y ;
+
+    }
+
 
 
 

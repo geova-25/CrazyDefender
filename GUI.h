@@ -12,6 +12,7 @@ using std::string;
 #include "Fondo.h"
 #include "Image.h"
 #include "Personaje.h"
+#include "Nave.h"
  /*
  *  Created on: 09/08/2014
  *      Author: sebastian
@@ -26,13 +27,14 @@ public:
 	virtual ~GUI();
 	void Render();
 	void initScreen();
-	void Update(int PtrPersonaje);
+	void Update(Personaje* PtrPersonaje);
 
 
 private:
 	Fondo fondo;
 	Image imgNave;
-	int PtrPersonaje;
+	Personaje* PtrPersonajeNave;
+	Personaje naveGui;
 
 };
 #endif /* LOGICA_H_ */

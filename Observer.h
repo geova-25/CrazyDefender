@@ -7,7 +7,7 @@ class Observer
 
 
 public:
-    virtual void Update(int PterPersonaje) = 0;
+     void Update(Personaje* PterPersonaje) ;
 };
 Observer::Observer(){
 

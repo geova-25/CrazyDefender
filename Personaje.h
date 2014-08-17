@@ -32,6 +32,7 @@ public:
     int* getPtrPosicion_y();
     void setPtrPosicion_x(int* x);
     void setPtrPosicion_y(int* y);
+    void acelerar(int * velocidad_x ,int* velocidad_y );
 
 protected:
     int posicion_inicial_x = 0;

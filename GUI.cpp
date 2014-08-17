@@ -13,7 +13,7 @@ using std::string;
 
 GUI::GUI() {
 
-
+	PtrPersonajeNave = &naveGui;
 
 	// TODO Auto-generated constructor stu
 }
@@ -26,19 +26,25 @@ void GUI::initScreen(){
 }
 
 void GUI::Render(){
+
+
 	fondo.rellenarFondoNegro();
 	fondo.dibujarFondo();
 
+
+
+   // cout<<"personaje actualizado "<< *naveGui.getPtrPosicion_x() <<endl;
+
 	imgNave.cargarImagen("nave.bmp");
-	imgNave.Dibujar(fondo.getPunteroScreen(),0,0);
+	imgNave.Dibujar(fondo.getPunteroScreen(), PtrPersonajeNave);
 
     //lo ultimo que tiene que hacer
 	fondo.actualizarFondo();
 }
-void GUI::Update(int personaje)
+void GUI::Update(Personaje* personaje)
 {
-   PtrPersonaje = personaje;
-   cout<<"personaje actualizado "<< PtrPersonaje <<endl;
+   PtrPersonajeNave = personaje;
+
 
     //Lets print on console just to test the working
 
