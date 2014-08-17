@@ -10,6 +10,7 @@ using std::string;
 #include "GUI.h"
 
 
+
 GUI::GUI() {
 
 
@@ -27,7 +28,19 @@ void GUI::initScreen(){
 void GUI::Render(){
 	fondo.rellenarFondoNegro();
 	fondo.dibujarFondo();
+
+	imgNave.cargarImagen("nave.bmp");
+	imgNave.Dibujar(fondo.getPunteroScreen(),0,0);
+
+    //lo ultimo que tiene que hacer
 	fondo.actualizarFondo();
+}
+void GUI::Update(int personaje)
+{
+   PtrPersonaje = personaje;
+   cout<<"personaje actualizado "<< PtrPersonaje <<endl;
+
+    //Lets print on console just to test the working
 
 }
 

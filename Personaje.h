@@ -1,3 +1,7 @@
+
+
+#ifndef PERSONAJE_H_
+#define PERSONAJE_H_
 #include <string> // la clase Personaje utiliza la clase string estándar de C++
 using std::string;
 #include <SDL/SDL.h>
@@ -38,3 +42,5 @@ protected:
 
 
 };
+
+#endif /* LOGICA_H_ */

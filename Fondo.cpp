@@ -98,3 +98,7 @@ void Fondo::init(){
   int Fondo::getPosicionRect2Fondo_x(){
   	 return rect_fondo2.x;
   }
+
+  SDL_Surface* Fondo::getPunteroScreen(){
+	  return screen;
+  }

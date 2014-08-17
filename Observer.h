@@ -1,7 +1,17 @@
 #pragma once
 
+#include "Personaje.h"
 class Observer
 {
+
+
+
 public:
-    virtual void Update(float price) = 0;
+    virtual void Update(int PterPersonaje) = 0;
 };
+Observer::Observer(){
+
+}
+Observer::~Observer() {
+	// TODO Auto-generated destructor stub
+}

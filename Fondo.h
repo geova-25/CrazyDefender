@@ -27,6 +27,7 @@ public:
 	void init();
 	int getPosicionRectFondo_x();
 	int getPosicionRect2Fondo_x();
+	SDL_Surface* getPunteroScreen();
 
 
 

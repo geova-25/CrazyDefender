@@ -21,20 +21,20 @@ int Eventos::identificarTecla(){
 
 			if (event.type == SDL_KEYDOWN){
 				if (event.key.keysym.sym == SDLK_UP){
-					cout<<1<<endl;
+
 					return 1;
 
 				}
 			    if (event.key.keysym.sym == SDLK_DOWN){
-					cout<<2<<endl;
+
 					return 2;
 				}
 			    if (event.key.keysym.sym == SDLK_RIGHT){
-			    	cout<<3<<endl;
+
 			    	return 3;
 				}
 			    if (event.key.keysym.sym == SDLK_LEFT){
-	 				cout<<4<<endl;
+
 	 				return 4;
 			   }
 

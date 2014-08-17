@@ -2,16 +2,15 @@
 #include <iostream>
 using std::cout;
 using std::endl;
-#include <SDL/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
 using std::string;
 #include "GUI.h"
 #include "SDL/SDL_thread.h"
-#include "Eventos.h"
 #include <pthread.h>
 #include "Logica.h"
+
 
 /*
 Fondo fondo1;
@@ -50,14 +49,27 @@ void* update(void* g){
 	}
 }
 */
+GUI gui;
+Logica logica;
 
+pthread_t hilo1;
+
+void *correrHiloRender(void* unused){
+	while (true){
+		gui.Render();
+	}
+
+
+}
 
 int main(){
-	GUI gui;
-    Logica logica;
 
+    logica.Attach(&gui);
     gui.initScreen();
-    gui.Render();
+
+    pthread_create(&hilo1,NULL,correrHiloRender,NULL);
+
+
 
     logica.run();
 

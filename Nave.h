@@ -9,6 +9,7 @@
 #define NAVE_H_
 #include "Personaje.h"
 
+
 class Nave : public Personaje
 {
 public:

@@ -26,9 +26,10 @@ void Logica::run(){
 	while (true){
 		tecla = evento.identificarTecla();
 		SDL_Delay(300);                       //DElay/////////////////////
-		cout<<tecla<<endl;
+		//cout<<tecla<<endl;
 		if (tecla == 1){    //Tecla arriba
 			*PtrVelocidad_y = *PtrVelocidad_y - 1;
+
 		}
 		if (tecla == 2){    //Tecla abajo
 			*PtrVelocidad_y = *PtrVelocidad_y + 1;
@@ -41,12 +42,15 @@ void Logica::run(){
 		}
 		nave.acelerar(PtrVelocidad_x,PtrVelocidad_y);
 		nave.imprimirPosicion();
+		Notificar(*nave.getPtrPosicion_x());
+
+
 
 	 }
 
-
-
-	cout<<"e"<<endl;
-
+}
+void Logica::Notificar(int personaje)
+{
+  Notify(personaje);
 }
 
