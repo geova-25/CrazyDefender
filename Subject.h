@@ -16,7 +16,7 @@ class Subject
 public:
     void Attach(GUI *PtrGui);
     void Detach(GUI *PtrGui);
-    void Notify(Personaje* PtrPersonaje);
+    void Notify(ListaSimple* PtrPersonaje);
 };
 
 #endif /* LOGICA_H_ */

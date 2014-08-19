@@ -19,14 +19,14 @@ Fondo::Fondo() {
 	rect_fondo.y = 0;
 	rect_fondo.h = NULL;
 	rect_fondo.w = NULL;
-	rect_fondo2.x = 0;
+	rect_fondo2.x = 2400;
 	rect_fondo2.y = 0;
 	rect_fondo2.h = NULL;
 	rect_fondo2.w = NULL;
  ANCHO_DE_PANTALLA=1200;
 		LARGO_DE_PANTALLA = 600;
 	    INICIAL_P1= 0;
-	    INICIAL_P2 = - (ANCHO_DE_PANTALLA * 2);
+	    INICIAL_P2 = 2400;
 	    p1 = INICIAL_P1;
 	    p2 = INICIAL_P2;
 
@@ -86,7 +86,7 @@ void Fondo::init(){
 
  }
 
- int Fondo::getPosicionRectFondo_x(){
+ int Fondo::getPosicionRectFondo_x() {
  	 return rect_fondo.x;
  }
  void Fondo::moverRect2Fondo_x(int num_de_pixeles){
@@ -94,11 +94,14 @@ void Fondo::init(){
  	 rect_fondo2.x =  p2;
 
   }
-
   int Fondo::getPosicionRect2Fondo_x(){
   	 return rect_fondo2.x;
   }
-
   SDL_Surface* Fondo::getPunteroScreen(){
 	  return screen;
+  }
+  void Fondo::mover(int x){
+	  rect_fondo.x=(x);
+	  rect_fondo2.x=(x+2400);
+
   }

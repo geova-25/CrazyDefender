@@ -19,9 +19,11 @@ public:
 	virtual ~Image();
 	void cargarImagen(const char*  nombre);
 	void Dibujar(SDL_Surface* screen , Personaje* personaje);
+	void DibujarNave(SDL_Surface* screen , Personaje* personaje);
 
 
-private:
+
+protected:
 	SDL_Surface* imagen  = NULL ;
 	SDL_Rect rect;
 };

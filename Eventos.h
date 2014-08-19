@@ -25,12 +25,7 @@ class Eventos
 		Eventos();
 	    int detectarEventos( );
 	    int identificarTecla();
-
 		void eventoMouse();
 
 };
-
-
-
-
 #endif /* EVENTOS_H_ */

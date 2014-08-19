@@ -23,7 +23,8 @@ using std::string;
 #include "Nave.h"
 #include "Subject.h"
 #include "Personaje.h"
-
+#include "Obstaculos.h"
+#include "Listasimple.h"
 
 
 class Logica :public Subject
@@ -32,12 +33,25 @@ public:
 	Logica();
 	virtual ~Logica();
 	void run();
-	void Notificar(Personaje* PtrPersonaje);
+	void Notificar(ListaSimple* PtrPersonaje);
+	void colocarObstaculos();
+	void colisionManagerDeNave(int*,int*);
+	void setLimitesDeAreaDeJuego(int *PtrPosicionGeneral,int*PtrVelocidad_x,int* PtrVelocidad_y  );
+    void crearPersonajes();
+
 
 private:
 	Eventos evento;
-	Personaje nave;
+	Nave nave;
+	Personaje alien;
 	Personaje* PtrNave;
+	Personaje* PtrAlien;
+	Obstaculos obstaculo1;
+	int numeroDePersonajes;
+	ListaSimple listajugadores;
+	ListaSimple* Ptrlistajugadores;
+	int* PtrPosicionGeneral;
+	int PosicionGeneral;
 
 };
 

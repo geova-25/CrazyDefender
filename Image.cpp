@@ -33,4 +33,12 @@ void Image::cargarImagen(const char*  nombre){
 	imagen = SDL_LoadBMP(nombre);
 
 }
+void Image::DibujarNave(SDL_Surface* screen , Personaje* personaje){
+	int* xx = personaje->getPtrPosicion_x();
+	int* yy = personaje->getPtrPosicion_y();
+	rect.x = 600;
+	rect.y = *yy ;
+	SDL_BlitSurface(imagen,NULL,screen, &rect);
+
+}
 

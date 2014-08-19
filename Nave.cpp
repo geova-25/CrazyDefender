@@ -9,7 +9,8 @@
 
 
 Nave::Nave() {
-	// TODO Auto-generated constructor stub
+	 posicion_inicial_x = 600;
+	 posicion_inicial_y =300;
 
 }
 
@@ -20,6 +21,11 @@ Nave::~Nave() {
 void Nave::acelerar(int * velocidad_x ,int* velocidad_y ){
 	*PtrPosicion_x = *PtrPosicion_x + *velocidad_x ;
 	*PtrPosicion_y = *PtrPosicion_y + *velocidad_y ;
+
+}
+void Nave::rodar(int * velocidad_y){
+	 *velocidad_y = 0;
+	 cout<<"rodando"<<endl;
 
 }
 

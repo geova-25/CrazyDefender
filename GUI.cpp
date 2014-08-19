@@ -8,14 +8,17 @@ using std::endl;
 #include <string>
 using std::string;
 #include "GUI.h"
+#include "Nodo.h"
 
 
 
 GUI::GUI() {
 
-	PtrPersonajeNave = &naveGui;
+	//PtrPersonajeNave = &naveGui;
+	//PtrPersonajeAlien = &alienGui;
+	Ptrlistasimple = & listasimple;
 
-	// TODO Auto-generated constructor stu
+
 }
 GUI::~GUI() {}
 
@@ -23,6 +26,26 @@ void GUI::initScreen(){
 	fondo.init();
 	fondo.dibujarVentana();
 	fondo.cargarImagenFondo();
+
+}
+void GUI::dibujarElementos(){
+	 Nodos* temporal = NULL;
+	    temporal = Ptrlistasimple->get_primerNodo();
+	    bool primer_ele = true;
+	    	while(temporal != NULL)
+
+	    	{
+	    		if(primer_ele){
+	    			imgNave.DibujarNave(fondo.getPunteroScreen(), Ptrlistasimple->get_primerNodo()->get_PtrPersonaje());
+	    			primer_ele = false;
+	    		}
+	    		else{
+	    			imgAlien.Dibujar(fondo.getPunteroScreen(),temporal->get_PtrPersonaje());
+	    		}
+
+
+	    		temporal = temporal->get_siguiente();
+	    	}
 }
 
 void GUI::Render(){
@@ -31,19 +54,19 @@ void GUI::Render(){
 	fondo.rellenarFondoNegro();
 	fondo.dibujarFondo();
 
+    imgAlien.cargarImagen("Alien.bmp");
+    imgNave.cargarImagen("nave.bmp");
 
+    dibujarElementos();
 
-   // cout<<"personaje actualizado "<< *naveGui.getPtrPosicion_x() <<endl;
-
-	imgNave.cargarImagen("nave.bmp");
-	imgNave.Dibujar(fondo.getPunteroScreen(), PtrPersonajeNave);
-
-    //lo ultimo que tiene que hacer
+	fondo.mover(-(*Ptrlistasimple->get_primerNodo()->get_PtrPersonaje()->getPtrPosicion_x() - 600));
 	fondo.actualizarFondo();
+	//cout<<fondo.getPosicionRectFondo_x()<<endl;
+
 }
-void GUI::Update(Personaje* personaje)
+void GUI::Update(ListaSimple* personaje)
 {
-   PtrPersonajeNave = personaje;
+   Ptrlistasimple = personaje;
 
 
     //Lets print on console just to test the working

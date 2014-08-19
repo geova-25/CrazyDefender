@@ -10,6 +10,7 @@ using std::endl;
 Personaje::Personaje(){
 	PtrPosicion_x = &posicion_inicial_x;
 	PtrPosicion_y = &posicion_inicial_y;
+	PtrVelocidad_x = &velocidadinicial;
 
 
 }
@@ -17,7 +18,9 @@ Personaje::Personaje(){
 
     }
 
-	void Personaje::explotar(){}
+	void Personaje::explotar(){
+		cout<<"Explotar"<<endl;
+	}
 
 	void Personaje::moverse(){}
 
@@ -60,6 +63,17 @@ Personaje::Personaje(){
     	*PtrPosicion_y = *PtrPosicion_y + *velocidad_y ;
 
     }
+    void Personaje::rodar(int * velocidad_y){
+    	*velocidad_y = 0;
+
+    }
+    void Personaje::setVelocidadEnX(int*  PtrVelocidad){
+    	PtrVelocidad_x = PtrVelocidad;
+    }
+    int* Personaje::getVelocidadEnX(){
+    	return PtrVelocidad_x ;
+    }
+
 
 
 

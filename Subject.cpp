@@ -15,7 +15,7 @@ void Subject::Detach(GUI *PtrGui)
     list.erase(std::remove(list.begin(), list.end(), PtrGui), list.end());
 }
 
-void Subject::Notify(Personaje* PtrPersonaje)
+void Subject::Notify(ListaSimple* PtrPersonaje)
 {
     for(vector<GUI*>::const_iterator iter = list.begin(); iter != list.end(); ++iter)
     {

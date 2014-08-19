@@ -13,6 +13,7 @@ using std::string;
 #include "Image.h"
 #include "Personaje.h"
 #include "Nave.h"
+#include "Listasimple.h"
  /*
  *  Created on: 09/08/2014
  *      Author: sebastian
@@ -27,14 +28,17 @@ public:
 	virtual ~GUI();
 	void Render();
 	void initScreen();
-	void Update(Personaje* PtrPersonaje);
+	void Update(ListaSimple*  personaje);
+	void dibujarElementos();
 
 
 private:
 	Fondo fondo;
 	Image imgNave;
-	Personaje* PtrPersonajeNave;
-	Personaje naveGui;
+	Image imgAlien;
+    bool primeracorrida = true;
+    ListaSimple* Ptrlistasimple;
+    ListaSimple listasimple;
 
 };
 #endif /* LOGICA_H_ */

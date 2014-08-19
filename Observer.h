@@ -7,7 +7,7 @@ class Observer
 
 
 public:
-     void Update(Personaje* PterPersonaje) ;
+     void Update(ListaSimple* PterPersonaje) ;
 };
 Observer::Observer(){
 

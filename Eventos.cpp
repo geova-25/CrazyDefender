@@ -39,6 +39,10 @@ int Eventos::identificarTecla(){
 			   }
 
 
+
+			}
+			if (event.type == SDL_QUIT){
+				return 10;
 			}
 
 		}
