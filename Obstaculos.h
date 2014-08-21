@@ -17,7 +17,7 @@ using std::endl;
 #include <stdio.h>
 #include <stdlib.h>
 
-class Obstaculos : public  Personaje{
+class Obstaculos : public Personaje{
 public:
 	Obstaculos();
 
@@ -28,7 +28,12 @@ public:
     void RebotarEn_X(int * x);
     void RebotarEn_Y(int * y);
     bool detectarColision(int* x, int* y);
-private:
+    int getX1();
+    int getX2();
+    int getY1();
+    int getY2();
+    void acelerar(int * velocidad_x ,int* velocidad_y );
+protected:
 
 	int x1;
 	int x2;

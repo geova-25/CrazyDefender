@@ -73,6 +73,13 @@ Personaje::Personaje(){
     int* Personaje::getVelocidadEnX(){
     	return PtrVelocidad_x ;
     }
+    int Personaje::getId(){
+       	return id ;
+       }
+    void Personaje::setId(int c){
+           	id = c ;
+           }
+
 
 
 

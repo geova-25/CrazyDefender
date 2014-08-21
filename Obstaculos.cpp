@@ -16,7 +16,7 @@ Obstaculos::~Obstaculos() {
 	// TODO Auto-generated destructor stub
 	}
  bool Obstaculos::detectarColisionEnX(int* x){
-	if (*x >= x1 & *x <= x2 ){
+	if ((*x >= x1) & (*x <= x2) ){
 
 		return true;
 
@@ -27,7 +27,7 @@ Obstaculos::~Obstaculos() {
 
 }
  bool Obstaculos::detectarColisionEnY( int* y){
- 	if ( *y >= y1 & *y <= y2  ){
+ 	if ( (*y >= y1) & (*y <= y2)  ){
 
  		return true;
 
@@ -62,4 +62,22 @@ Obstaculos::~Obstaculos() {
   	else{
   		return false;
   	}
+ }
+ int Obstaculos::getX1(){
+	 return x1;
+ }
+ int Obstaculos::getX2(){
+	 return x2;
+ }
+ int Obstaculos::getY1(){
+	 return y1;
+ }
+ int Obstaculos::getY2(){return y2;}
+
+ void Obstaculos::acelerar(int * velocidad_x ,int* velocidad_y ){
+	x1 = x1 + *velocidad_x;
+    x2 = x2 + *velocidad_x;
+    y1 = y1 + *velocidad_y;
+    y2 = y2 + *velocidad_y;
+
  }

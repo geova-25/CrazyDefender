@@ -10,7 +10,7 @@
 
 #include "Personaje.h"
 
-class Nativo : Personaje
+class Nativo : PersAbonaje
 {
 	private:
 		int vida;

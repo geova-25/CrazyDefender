@@ -52,6 +52,7 @@ void* update(void* g){
 GUI gui;
 Logica logica;
 
+
 pthread_t hilo1;
 
 void *correrHiloRender(void* unused){

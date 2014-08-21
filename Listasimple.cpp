@@ -23,7 +23,7 @@ void ListaSimple :: imprimir()
 	temporal = primerNodo;
 	while(temporal != NULL)
 	{
-		cout << temporal->get_PtrPersonaje() << endl;
+		cout << temporal->get_elemento() << endl;
 		temporal = temporal->get_siguiente();
 	}
 }
@@ -47,6 +47,22 @@ void ListaSimple :: agregarAlFinal(Personaje* p)
 	}
 	return;
 }
+
+void ListaSimple :: agregarAlFinal(int num)
+{
+	Nodos* temp = new Nodos(num);
+	if (estaVacia())
+	{
+		this->primerNodo = this->ultimoNodo = temp;
+	}
+	else
+	{
+		this->ultimoNodo->set_siguiente(temp);
+		this->ultimoNodo = temp;
+	}
+	return;
+}
+
 
 void ListaSimple :: eliminarDelFinal()
 {
@@ -91,6 +107,18 @@ void ListaSimple :: eliminarDelFrente()
 		primerNodo = primerNodo->get_siguiente();
 	}
 }
+
+void ListaSimple :: vaciar()
+{
+	int x;
+	while(primerNodo != ultimoNodo)
+	{
+		eliminarDelFinal();
+	}
+	primerNodo = ultimoNodo = NULL;
+}
+
+
 Nodos* ListaSimple::get_primerNodo(){
 	return primerNodo;
 }

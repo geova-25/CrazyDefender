@@ -36,6 +36,8 @@ public:
     void rodar(int* velocidad_y );
     void setVelocidadEnX(int* PtrVelocidad);
     int* getVelocidadEnX();
+    int getId();
+    void setId(int c);
 
 protected:
     int posicion_inicial_x = 0;
@@ -45,6 +47,7 @@ protected:
 	int* PtrPosicion_y;
 	int* PtrVelocidad_x;
 	int velocidadinicial = 0 ;
+	int id = 0;
 
 };
 

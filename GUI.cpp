@@ -9,6 +9,7 @@ using std::endl;
 using std::string;
 #include "GUI.h"
 #include "Nodo.h"
+#include "Obstaculos.h"
 
 
 
@@ -35,12 +36,18 @@ void GUI::dibujarElementos(){
 	    	while(temporal != NULL)
 
 	    	{
-	    		if(primer_ele){
-	    			imgNave.DibujarNave(fondo.getPunteroScreen(), Ptrlistasimple->get_primerNodo()->get_PtrPersonaje());
+	    		if(temporal->get_elemento()->getId() == 1){
+
+	    			imgNave.DibujarNave(fondo.getPunteroScreen(), Ptrlistasimple->get_primerNodo()->get_elemento());
 	    			primer_ele = false;
 	    		}
+	    		else if(temporal->get_elemento()->getId() == 6){
+	    			Obstaculos* ptr;
+	    			ptr = (Obstaculos*)(temporal->get_elemento());
+                    imgRect.DrawRect(ptr,fondo.getPunteroScreen());
+	    		}
 	    		else{
-	    			imgAlien.Dibujar(fondo.getPunteroScreen(),temporal->get_PtrPersonaje());
+	    			imgAlien.Dibujar(fondo.getPunteroScreen(),temporal->get_elemento());
 	    		}
 
 
@@ -59,7 +66,7 @@ void GUI::Render(){
 
     dibujarElementos();
 
-	fondo.mover(-(*Ptrlistasimple->get_primerNodo()->get_PtrPersonaje()->getPtrPosicion_x() - 600));
+	fondo.mover(-(*Ptrlistasimple->get_primerNodo()->get_elemento()->getPtrPosicion_x() - 600));
 	fondo.actualizarFondo();
 	//cout<<fondo.getPosicionRectFondo_x()<<endl;
 

@@ -13,13 +13,19 @@
 using std::string;
 #include "Personaje.h"
 
+
+#include "Obstaculos.h"
+
 class Image {
 public:
 	Image();
 	virtual ~Image();
 	void cargarImagen(const char*  nombre);
+	void DrawRect(Obstaculos* obstaculos , SDL_Surface* screen);
 	void Dibujar(SDL_Surface* screen , Personaje* personaje);
 	void DibujarNave(SDL_Surface* screen , Personaje* personaje);
+
+
 
 
 

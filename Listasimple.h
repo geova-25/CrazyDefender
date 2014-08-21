@@ -32,8 +32,10 @@ class ListaSimple
 		void imprimir();
 		void agregarAlFrente(Personaje* p );
 		void agregarAlFinal(Personaje* p);
+		void agregarAlFinal(int);
 		void eliminarDelFrente();
 		void eliminarDelFinal();
+		void vaciar();
 		bool estaVacia();
 		Nodos* get_primerNodo();
 };

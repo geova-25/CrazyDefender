@@ -21,7 +21,7 @@ Image::~Image() {
 	// TODO Auto-generated destructor stub
 }
 
-void Image::Dibujar(SDL_Surface* screen , Personaje* personaje){
+void Image::Dibujar(SDL_Surface* screen ,Personaje* personaje){
 	int* xx = personaje->getPtrPosicion_x();
 	int* yy = personaje->getPtrPosicion_y();
 	rect.x = *xx;
@@ -33,6 +33,20 @@ void Image::cargarImagen(const char*  nombre){
 	imagen = SDL_LoadBMP(nombre);
 
 }
+
+void Image::DrawRect(Obstaculos* obstaculos , SDL_Surface* screen){
+	int x1= obstaculos->getX1();
+	int x2= obstaculos->getX2();
+	int y1 = obstaculos->getY1();
+	int y2= obstaculos->getY2();
+	rect.x = x1;
+	rect.y = y1 ;
+	rect.w = x2 - x1;
+	rect.h = y2 - y1;
+	SDL_FillRect(screen, (&rect ), SDL_MapRGB(screen->format,0,0,0));
+
+
+}
 void Image::DibujarNave(SDL_Surface* screen , Personaje* personaje){
 	int* xx = personaje->getPtrPosicion_x();
 	int* yy = personaje->getPtrPosicion_y();
@@ -41,4 +55,5 @@ void Image::DibujarNave(SDL_Surface* screen , Personaje* personaje){
 	SDL_BlitSurface(imagen,NULL,screen, &rect);
 
 }
+
 

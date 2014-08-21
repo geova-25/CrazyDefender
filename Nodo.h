@@ -21,14 +21,17 @@ using namespace std;
 class Nodos
 {
 	private:
+		int num;
 		Personaje* PtrPersonaje;
 		Nodos *siguiente;
 	public:
 		Nodos();
+		Nodos(int);
 		Nodos(Personaje*);
-		void set_PtrPersonaje(Personaje*);
+		void set_elemento(Personaje*);
+		void set_elemento(int);
 		void set_siguiente(Nodos*);
-		Personaje* get_PtrPersonaje();
+		Personaje* get_elemento();
 		Nodos* get_siguiente();
 };
 

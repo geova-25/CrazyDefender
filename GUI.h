@@ -14,6 +14,8 @@ using std::string;
 #include "Personaje.h"
 #include "Nave.h"
 #include "Listasimple.h"
+
+#include<typeinfo>
  /*
  *  Created on: 09/08/2014
  *      Author: sebastian
@@ -36,6 +38,7 @@ private:
 	Fondo fondo;
 	Image imgNave;
 	Image imgAlien;
+	Image imgRect;
     bool primeracorrida = true;
     ListaSimple* Ptrlistasimple;
     ListaSimple listasimple;
